@@ -1,0 +1,30 @@
+﻿model IEnumerable<IT_ELECTIVE_2_BSIT_31E3_LOPEZ_LANCE_JORDAN.Models.TaskItem>
+
+@{
+    ViewData["Title"] = "Shipped Tasks Dashboard";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3">@ViewData["Title"]</h2>
+    <table class="table table-bordered table-striped shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Task Title</th>
+                <th>Type</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.Id</td>
+                    <td>@task.Title</td>
+                    <td><span class="badge bg-secondary">@task.Type</span></td>
+                    <td><span class="badge bg-success">@task.Status</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
